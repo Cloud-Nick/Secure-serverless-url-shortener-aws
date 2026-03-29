@@ -1,155 +1,66 @@
-# Secure Serverless URL Shortener 
+🚀 Secure Serverless URL Shortener
 
- 
+This project is a serverless web application built on AWS that allows authenticated users to generate and use shortened URLs.
 
-This project is a serverless web application built on AWS that allows authenticated users to generate shortened URLs. 
+The goal of this project is to demonstrate how core AWS services can be combined to build a secure, scalable, and production-style application without managing traditional servers.
 
- 
+🧠 Architecture Overview
 
-The goal of this project is to explore how serverless services can be combined to create a secure, scalable, and observable cloud application. 
+The application is built using the following AWS services:
 
- 
+AWS Lambda – handles backend application logic
+API Gateway / Lambda Function URL – exposes HTTPS endpoints
+DynamoDB – stores URL mappings
+Amazon Cognito – handles user authentication and session management
+CloudWatch – provides logging and monitoring
 
- 
+This serverless architecture eliminates the need for infrastructure management and automatically scales based on usage.
 
-## Architecture Overview 
+🎯 Project Goals
 
- 
+This project focuses on building practical cloud engineering skills, including:
 
-The application is built using the following AWS services: 
+Designing and implementing a serverless architecture
+Integrating authentication using Amazon Cognito
+Applying least-privilege IAM principles
+Implementing logging and monitoring for visibility
+Understanding scalable and event-driven system design
+🔄 High-Level Workflow
+A user signs in via Amazon Cognito
+The frontend sends a request to create a short URL
+The request triggers an AWS Lambda function
+The Lambda function generates a unique short ID and stores it in DynamoDB
+When a short URL is accessed, a Lambda function retrieves the original URL
+The user is redirected to the original destination
+🔐 Security Considerations
 
- 
+This project incorporates several foundational security practices:
 
-- **AWS Lambda** – handles application logic 
+Least-privilege IAM roles for all Lambda functions
+Authentication and access control using Amazon Cognito
+Controlled API access through Gateway / Function URL configuration
+Logging for auditing and debugging
+📊 Monitoring & Observability
 
-- **API Gateway** – exposes HTTPS endpoints for the API 
+Operational visibility is implemented using:
 
-- **DynamoDB** – stores shortened URL mappings 
+CloudWatch Logs – for Lambda execution and debugging
+CloudWatch Metrics – for tracking usage and errors
+Basic monitoring to identify failures and abnormal behavior
+🛠️ Future Improvements
 
-- **Amazon Cognito** – provides authentication and user management 
+Planned enhancements include:
 
-- **CloudWatch** – logging and monitoring for application visibility 
+Custom domain support for cleaner short URLs
+Rate limiting and abuse protection
+Infrastructure as Code (Terraform or CloudFormation)
+Improved frontend user experience
+Analytics (click tracking, usage metrics)
+📚 Learning Outcomes
 
- 
+Through this project, I am gaining hands-on experience with:
 
-This architecture removes the need for traditional servers and allows the application to scale automatically. 
-
- 
-
- 
-
-## Project Goals 
-
- 
-
-This project focuses on several core cloud engineering concepts: 
-
- 
-
-- Building a **serverless application architecture** 
-
-- Implementing **authentication and authorization** 
-
-- Applying **least-privilege IAM policies** 
-
-- Adding **logging and monitoring** for operational visibility 
-
-- Understanding **scalable cloud design patterns** 
-
- 
-
- 
-
-## High-Level Workflow 
-
- 
-
-1. A user authenticates using **Amazon Cognito**. 
-
-2. The user submits a long URL through an **API Gateway endpoint**. 
-
-3. The request triggers an **AWS Lambda function**. 
-
-4. The Lambda function generates a shortened URL and stores the mapping in **DynamoDB**. 
-
-5. When the shortened URL is accessed, another Lambda function retrieves the original URL and redirects the user. 
-
- 
-
- 
-
-## Security Considerations 
-
- 
-
-Security practices explored in this project include: 
-
- 
-
-- Least-privilege IAM roles for Lambda functions 
-
-- Authentication through Amazon Cognito 
-
-- Logging and monitoring with CloudWatch 
-
-- API Gateway authorization 
-
- 
-
- 
-
-## Monitoring and Observability 
-
- 
-
-Operational visibility is provided through: 
-
- 
-
-- **CloudWatch Logs** for Lambda execution logs 
-
-- **CloudWatch Metrics** for monitoring API usage and errors 
-
-- Alerts for abnormal activity or failures 
-
- 
-
- 
-
-## Future Improvements 
-
- 
-
-Planned improvements include: 
-
- 
-
-- Adding rate limiting and abuse protection 
-
-- Implementing infrastructure deployment using Terraform or CloudFormation 
-
-- Adding a simple frontend interface 
-
-- Implementing custom domain support 
-
- 
-
- 
-
-## Learning Outcomes 
-
- 
-
-Through this project I am gaining hands-on experience with: 
-
- 
-
-- serverless application design 
-
-- AWS security and identity management 
-
-- cloud monitoring and logging 
-
-- designing scalable cloud architectures 
-
- 
+Serverless application design
+AWS identity and access management
+Cloud monitoring and debugging
+Building scalable, event-driven systems
